@@ -353,23 +353,18 @@
             cursor: pointer;
         }
 
-        .notes-area {
+        .notes-box {
             width: 100%;
-            min-height: 100px;
+            min-height: 80px;
             margin-top: 14px;
-            padding: 12px;
+            padding: 14px;
             border-radius: 12px;
             border: 1px solid var(--border-subtle);
             font-family: var(--font-sans);
-            font-size: 12.5px;
+            font-size: 13px;
+            line-height: 1.5;
             color: var(--navy-primary);
             background: var(--bg-light);
-            resize: vertical;
-            outline: none;
-        }
-
-        .notes-area:focus {
-            border-color: var(--magenta-accent);
         }
 
         /* MODAL / OVERLAY GUIÓN */
@@ -486,7 +481,7 @@
         <div class="pills-group">
             <span class="pill-badge magenta">@soyfernandarangel</span>
             <span class="pill-badge">656 publicaciones</span>
-            <span class="pill-badge">1712 seguidores</span>
+            <span class="pill-badge">1631 seguidores</span>
             <span class="pill-badge">1195 seguidos</span>
         </div>
     </header>
@@ -656,7 +651,7 @@
     <div class="section-header">
         <span class="tag-bracket">[ SECCIÓN 02 ]</span>
         <h2 class="section-title">Control de Publicaciones <span class="serif-italic">&amp; Comentarios</span></h2>
-        <p class="section-desc">Checklist interactivo para marcar los contenidos publicados y espacio de notas compartidas:</p>
+        <p class="section-desc">Checklist interactivo para marcar los contenidos publicados y espacio de notas importantes:</p>
     </div>
 
     <div class="tracking-box">
@@ -676,7 +671,9 @@
 
         <div style="margin-top: 20px;">
             <span class="tag-bracket" style="color: var(--navy-primary);">[ NOTAS Y OBSERVACIONES ]</span>
-            <textarea class="notes-area" placeholder="Escribe aquí los comentarios sobre las publicaciones, ajustes de fechas, feedback de rendimiento o notas para próximos guiones..."></textarea>
+            <div class="notes-box">
+                En este espacio se fijarán notas e ideas importantes que no debemos pasar por alto durante la ejecución de la estrategia de octubre.
+            </div>
         </div>
     </div>
 
