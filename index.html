@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia Editorial | Fernanda Rangel</title>
+    <!-- Fuentes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Paleta Oficial Fernanda Rangel */
+            --navy-primary: #111462;     /* Azul Marino Profundo */
+            --magenta-accent: #D938AD;   /* Magenta / Rosa Neón */
+            --bg-light: #E4ECEF;         /* Gris Hielo Base */
+            --bg-card: #FFFFFF;         /* Blanco Puro */
+            --text-dark: #111462;
+            --text-muted: #4B5563;       /* Gris Oscuro */
+            --text-subtle: #CBD8DE;      /* Gris Suave */
+            --border-subtle: #CBD8DE;
+            
+            /* Tipografías */
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.45;
+            padding: 16px 12px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        /* ELEMENTOS DE DISEÑO EDITORIAL */
+        .asterisk {
+            color: var(--magenta-accent);
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .tag-bracket {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .arrow-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid var(--navy-primary);
+            color: var(--navy-primary);
+            font-size: 14px;
+        }
+
+        /* HEADER CON PERFIL */
+        header {
+            background-color: var(--bg-card);
+            padding: 28px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(17, 20, 98, 0.05);
+            position: relative;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .profile-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .profile-avatar-container {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid var(--magenta-accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background-color: #E0E0E0;
+        }
+
+        .profile-avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .title-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            color: var(--navy-primary);
+        }
+
+        h1 .serif-italic {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0;
+        }
+
+        .hero-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            line-height: 1.45;
+        }
+
+        .pills-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .pill-badge {
+            background: var(--bg-light);
+            border: 1px solid var(--border-subtle);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--navy-primary);
+        }
+
+        .pill-badge.magenta {
+            background: var(--magenta-accent);
+            color: #FFFFFF;
+            border: none;
+        }
+
+        /* TARJETA DE EMBARQUE / EMPRENDEDORES */
+        .entrepreneur-card {
+            background: var(--navy-primary);
+            color: #FFFFFF;
+            border-radius: 20px;
+            padding: 24px 20px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .entrepreneur-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #FFFFFF;
+        }
+
+        .entrepreneur-card p {
+            font-size: 13px;
+            color: var(--text-subtle);
+            line-height: 1.4;
+        }
+
+        /* TITULARES DE SECCIÓN */
+        .section-header {
+            margin-top: 28px;
+            margin-bottom: 16px;
+            padding: 0 4px;
+        }
+
+        .section-header .tag-bracket {
+            color: var(--magenta-accent);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            color: var(--navy-primary);
+            margin-top: 4px;
+        }
+
+        .section-title .serif-italic {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .section-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--navy-primary);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            margin-top: 6px;
+        }
+
+        .btn-link .arrow {
+            font-size: 14px;
+        }
+
+        .btn-link.magenta-btn {
+            background-color: var(--magenta-accent);
+        }
+
+        /* CALENDARIO ESTILO TIMELINE */
+        .calendar-box {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 24px 20px;
+            margin-top: 16px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .month-heading {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-style: italic;
+            color: var(--magenta-accent);
+            margin: 20px 0 12px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 4px;
+        }
+
+        .month-heading:first-child {
+            margin-top: 0;
+        }
+
+        .timeline-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .timeline-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .timeline-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .timeline-date {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--navy-primary);
+        }
+
+        .timeline-tag {
+            font-size: 10px;
+            font-weight: 700;
+            background: #FFFFFF;
+            padding: 3px 8px;
+            border-radius: 10px;
+            color: var(--magenta-accent);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .timeline-title {
+            font-size: 13.5px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--navy-primary);
+        }
+
+        .timeline-cta {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* SECCIÓN DE SEGUIMIENTO Y NOTAS */
+        .tracking-box {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 24px 20px;
+            margin-top: 24px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .checklist-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--navy-primary);
+            background: var(--bg-light);
+            padding: 10px 12px;
+            border-radius: 10px;
+        }
+
+        .check-item input[type="checkbox"] {
+            accent-color: var(--magenta-accent);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .notes-area {
+            width: 100%;
+            min-height: 100px;
+            margin-top: 14px;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border-subtle);
+            font-family: var(--font-sans);
+            font-size: 12.5px;
+            color: var(--navy-primary);
+            background: var(--bg-light);
+            resize: vertical;
+            outline: none;
+        }
+
+        .notes-area:focus {
+            border-color: var(--magenta-accent);
+        }
+
+        /* MODAL / OVERLAY GUIÓN */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 20, 98, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .modal-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .modal-header {
+            background: var(--navy-primary);
+            color: #FFFFFF;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            font-size: 13.5px;
+            color: var(--text-dark);
+            line-height: 1.55;
+            white-space: pre-wrap;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy-primary);
+            color: #FFFFFF;
+            border-radius: 20px;
+            padding: 28px 20px;
+            text-align: center;
+            margin-top: 36px;
+        }
+
+        footer h2 {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        footer p {
+            font-size: 12px;
+            color: var(--text-subtle);
+        }
+
+        @media (min-width: 640px) {
+            body { padding: 32px 16px; }
+            .timeline-list { display: grid; grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER PRINCIPAL PERFIL FERNANDA RANGEL -->
+    <header>
+        <div class="header-top">
+            <span class="arrow-icon">&rarr;</span>
+            <span class="tag-bracket">[ ESTRATEGIA EDITORIAL ]</span>
+        </div>
+        
+        <div class="profile-title-wrapper">
+            <div class="profile-avatar-container">
+                <img src="https://i.ibb.co/XZ6gVW2W/IMG-8763.jpg" alt="Fernanda Rangel">
+            </div>
+            <div class="title-text-group">
+                <h1>Fernanda Rangel</h1>
+                <h1 style="font-size: 20px; color: var(--text-muted);"><span class="serif-italic">— Conciencia Financiera</span></h1>
+            </div>
+        </div>
+
+        <p class="hero-desc">🚀 Conciencia financiera • 🤍 Mamá • esposa • construyendo mi mejor versión • 🛡️ Seguros • educación • retiro | MDRT</p>
+        
+        <div class="pills-group">
+            <span class="pill-badge magenta">@soyfernandarangel</span>
+            <span class="pill-badge">656 publicaciones</span>
+            <span class="pill-badge">1631 seguidores</span>
+            <span class="pill-badge">1195 seguidos</span>
+        </div>
+    </header>
+
+    <!-- BLOQUE DESTACADO EMPRENDEDORES -->
+    <div class="entrepreneur-card">
+        <span class="tag-bracket" style="color: var(--magenta-accent);">[ ENFOQUE PRINCIPAL ]</span>
+        <h3 style="margin-top: 6px;">Construyendo Tu Patrimonio</h3>
+        <p>Estrategias de contenido orientadas a educar sobre protección familiar, fondos de retiro y cultura financiera accesible para mamás y familias.</p>
+    </div>
+
+    <!-- SECCIÓN 1: CALENDARIO -->
+    <div class="section-header">
+        <span class="tag-bracket">[ SECCIÓN 01 ]</span>
+        <h2 class="section-title">Calendario de Publicaciones</h2>
+        <p class="section-desc">Secuencia programada de publicaciones de Octubre. Haz clic en "Ver guión" para revisar el detalle de cada contenido:</p>
+    </div>
+
+    <div class="calendar-box">
+        <div class="month-heading">Octubre</div>
+        <div class="timeline-list">
+
+            <!-- PUB 1: Ley del 73 -->
+            <div class="timeline-card">
+                <div class="timeline-meta">
+                    <span class="timeline-date">Oct 03 · Pub 1</span>
+                    <span class="timeline-tag">Talking Head Q&amp;A</span>
+                </div>
+                <div class="timeline-title">Ley del 73: Beneficios y vinculación estratégica</div>
+                <div class="timeline-cta">CTA: Asesoría de Retiro por DM</div>
+                <button class="btn-link magenta-btn" onclick="openScriptModal(1)">
+                    <span>Ver guión</span>
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+
+            <!-- PUB 2: Preguntas Frecuentes Padres -->
+            <div class="timeline-card">
+                <div class="timeline-meta">
+                    <span class="timeline-date">Oct 06 · Pub 2</span>
+                    <span class="timeline-tag">Talking Head Q&amp;A</span>
+                </div>
+                <div class="timeline-title">Respondiendo preguntas frecuentes (seguro para padres de 50 a 80 años)</div>
+                <div class="timeline-cta">CTA: Comenta 'PADRES' por DM</div>
+                <button class="btn-link magenta-btn" onclick="openScriptModal(2)">
+                    <span>Ver guión</span>
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+
+            <!-- PUB 3: Maternidad -->
+            <div class="timeline-card">
+                <div class="timeline-meta">
+                    <span class="timeline-date">Oct 08 · Pub 3</span>
+                    <span class="timeline-tag">Talking Head Q&amp;A</span>
+                </div>
+                <div class="timeline-title">Así se ve un reembolso como beneficio de maternidad ¿qué es? ¿Cómo funciona?</div>
+                <div class="timeline-cta">CTA: Planea con tiempo 📲</div>
+                <button class="btn-link magenta-btn" onclick="openScriptModal(3)">
+                    <span>Ver guión</span>
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+
+            <!-- PUB 4: Yogurt Vacío -->
+            <div class="timeline-card">
+                <div class="timeline-meta">
+                    <span class="timeline-date">Oct 10 · Pub 4</span>
+                    <span class="timeline-tag">Talking Head Q&amp;A</span>
+                </div>
+                <div class="timeline-title">Teoría del Yogurt vacío: ¿Compras yogures o construyes patrimonio?</div>
+                <div class="timeline-cta">CTA: Envíame DM para tu asesoría</div>
+                <button class="btn-link magenta-btn" onclick="openScriptModal(4)">
+                    <span>Ver guión</span>
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+
+            <!-- PUB 5: Empodineradas -->
+            <div class="timeline-card">
+                <div class="timeline-meta">
+                    <span class="timeline-date">Oct 12 · Pub 5</span>
+                    <span class="timeline-tag">Talking Head Q&amp;A</span>
+                </div>
+                <div class="timeline-title">Empodineradas: Una mujer que aprende a crear, administrar y multiplicar su dinero</div>
+                <div class="timeline-cta">CTA: ¡Házmelo saber en los comentarios!</div>
+                <button class="btn-link magenta-btn" onclick="openScriptModal(5)">
+                    <span>Ver guión</span>
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+
+            <!-- PUB 6: Caso PPR 32 años -->
+            <div class="timeline-card">
+                <div class="timeline-meta">
+                    <span class="timeline-date">Oct 14 · Pub 6</span>
+                    <span class="timeline-tag">Caso Real / PPR</span>
+                </div>
+                <div class="timeline-title">Caso PPR: Mi clienta de 32 años</div>
+                <div class="timeline-cta">CTA: Por definir</div>
+                <button class="btn-link magenta-btn" onclick="openScriptModal(6)">
+                    <span>Ver guión</span>
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+
+            <!-- PUB 7: Pendiente -->
+            <div class="timeline-card">
+                <div class="timeline-meta">
+                    <span class="timeline-date">Oct 15 · Pub 7</span>
+                    <span class="timeline-tag">Por definir</span>
+                </div>
+                <div class="timeline-title">Tema pendiente</div>
+                <div class="timeline-cta">CTA: Por definir</div>
+                <button class="btn-link magenta-btn" onclick="openScriptModal(7)">
+                    <span>Ver guión</span>
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+
+            <!-- PUB 8: Pendiente -->
+            <div class="timeline-card">
+                <div class="timeline-meta">
+                    <span class="timeline-date">Oct 20 · Pub 8</span>
+                    <span class="timeline-tag">Por definir</span>
+                </div>
+                <div class="timeline-title">Tema pendiente</div>
+                <div class="timeline-cta">CTA: Por definir</div>
+                <button class="btn-link magenta-btn" onclick="openScriptModal(8)">
+                    <span>Ver guión</span>
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+
+            <!-- PUB 9: Pendiente -->
+            <div class="timeline-card">
+                <div class="timeline-meta">
+                    <span class="timeline-date">Oct 21 · Pub 9</span>
+                    <span class="timeline-tag">Por definir</span>
+                </div>
+                <div class="timeline-title">Tema pendiente</div>
+                <div class="timeline-cta">CTA: Por definir</div>
+                <button class="btn-link magenta-btn" onclick="openScriptModal(9)">
+                    <span>Ver guión</span>
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+
+            <!-- PUB 10: Pendiente -->
+            <div class="timeline-card">
+                <div class="timeline-meta">
+                    <span class="timeline-date">Oct 24 · Pub 10</span>
+                    <span class="timeline-tag">Por definir</span>
+                </div>
+                <div class="timeline-title">Tema pendiente</div>
+                <div class="timeline-cta">CTA: Por definir</div>
+                <button class="btn-link magenta-btn" onclick="openScriptModal(10)">
+                    <span>Ver guión</span>
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SECCIÓN 2: SEGUIMIENTO DE PUBLICACIONES REALIZADAS Y NOTAS -->
+    <div class="section-header">
+        <span class="tag-bracket">[ SECCIÓN 02 ]</span>
+        <h2 class="section-title">Control de Publicaciones <span class="serif-italic">&amp; Comentarios</span></h2>
+        <p class="section-desc">Checklist interactivo para marcar los contenidos publicados y espacio de notas compartidas:</p>
+    </div>
+
+    <div class="tracking-box">
+        <span class="tag-bracket" style="color: var(--magenta-accent);">[ CHECKLIST DE ESTADO ]</span>
+        <div class="checklist-group">
+            <label class="check-item"><input type="checkbox"> Oct 03 · Pub 1: Ley del 73</label>
+            <label class="check-item"><input type="checkbox"> Oct 06 · Pub 2: Respondiendo preguntas frecuentes (Padres 50-80)</label>
+            <label class="check-item"><input type="checkbox"> Oct 08 · Pub 3: Reembolso Beneficio Maternidad</label>
+            <label class="check-item"><input type="checkbox"> Oct 10 · Pub 4: Teoría del Yogurt Vacío</label>
+            <label class="check-item"><input type="checkbox"> Oct 12 · Pub 5: Empodineradas</label>
+            <label class="check-item"><input type="checkbox"> Oct 14 · Pub 6: Caso PPR Clienta 32 años</label>
+            <label class="check-item"><input type="checkbox"> Oct 15 · Pub 7: Tema pendiente</label>
+            <label class="check-item"><input type="checkbox"> Oct 20 · Pub 8: Tema pendiente</label>
+            <label class="check-item"><input type="checkbox"> Oct 21 · Pub 9: Tema pendiente</label>
+            <label class="check-item"><input type="checkbox"> Oct 24 · Pub 10: Tema pendiente</label>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <span class="tag-bracket" style="color: var(--navy-primary);">[ NOTAS Y OBSERVACIONES ]</span>
+            <textarea class="notes-area" placeholder="Escribe aquí los comentarios sobre las publicaciones, ajustes de fechas, feedback de rendimiento o notas para próximos guiones..."></textarea>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>Estrategia Lista para Ejecución</h2>
+        <p>Plan integral diseñado para Fernanda Rangel (@soyfernandarangel).</p>
+    </footer>
+
+</div>
+
+<!-- MODAL PARA VER GUIÓN -->
+<div class="modal-overlay" id="scriptModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3 id="modalTitle">Guión del Tema</h3>
+            <button class="modal-close" onclick="closeScriptModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="modalBody">
+            <!-- El contenido se inyecta por JavaScript -->
+        </div>
+    </div>
+</div>
+
+<script>
+    const scriptsData = {
+        1: `[ANÁLISIS DE TEMA Y ESTRATEGIA DE ENLACE]\n\nEn este post profundizaremos sobre los beneficios históricos y de cálculo de la Ley del 73 del IMSS para los trabajadores (derecho a pensión vitalicia, cálculo basado en el promedio de los últimos 5 años cotizados e inflación acumulada).\n\n¿Cómo se enlaza con el producto de Fer?\nSe explicará cómo utilizar un instrumento privado de retiro (PPR) o estrategia de ahorro complementario para potenciar los montos recibidos de la pensión o bien para cubrir la Modalidad 40 sin descapitalizarse, asegurando un retiro verdaderamente holgado e independiente.`,
+        
+        2: `[PREGUNTAS FRECUENTES - SEGURO PARA PADRES DE 50 A 80 AÑOS]\n\n1. Fer, mi papá ya tiene una enfermedad 😥 ¿Aun así se puede asegurar?\n(Respondiendo preguntas frecuentes de un producto para padres envejecidos).\n\n2. Mi mamá tiene 68 años y nunca ha tenido seguro de gastos médicos… ¿Todavía estoy a tiempo de asegurarla?\n\n3. Fer, ¿esto funciona como un seguro de gastos médicos? ¿Tengo que pagar deducible y comprobar en qué gasté?\n\n4. La semana pasada mi mamá se cayó y nosotros pagamos TODO 😩 ¿Después de un accidente así todavía puedo asegurarla?\n\n5. Somos 3 hermanos… ¿Podemos contratarlo entre nosotros para proteger a mis papás?`,
+        
+        3: `Reembolso por maternidad\nEstructura y Diálogo del Reel\n\n[HOOK / GANCHO]\nTexto en pantalla: ¿Embarazada y con seguro? Ojo a esto...\nFer: «¿Vas a buscar bebé o ya estás en la dulce espera? Hay algo importantísimo de tu seguro de gastos médicos que necesitas saber antes de llegar al hospital.»\n\n[QUÉ ES]\nFer: «El beneficio por maternidad no solo ayuda a pagar el parto o la cesárea mediante una suma asegurada directa. Lo más valioso es que protege a tu bebé desde el minuto uno ante cualquier complicación o padecimiento al nacer.»\n\n[LA REGLA DE ORO]\nTexto en pantalla: Regla de los 10 meses ⚠️\nFer: «Pero ¡cuidado! Aquí está la clave: la mayoría de las aseguradoras piden un periodo de espera de 10 meses de antigüedad con la póliza. O sea, el seguro se contrata antes de embarazarte, no cuando ya salió la prueba positiva.»\n\n[CÓMO SE COBRA]\nFer: «¿Cómo lo cobras? Sencillo:\nUno: Programación. Meses antes del parto tramitamos tu carta de autorización para que la aseguradora le pague directo al hospital.\nDos: Reembolso. Pagas, juntamos tus facturas e informe médico, y la aseguradora te deposita tu suma asegurada.»\n\n[CALL TO ACTION / CIERRE]\nTexto en pantalla: Planea con tiempo 📲\nFer: «Si estás planeando hacer crecer la familia, ¡hagámoslo bien y con tiempo! Mándame un mensaje directo y revisamos la mejor opción para ti.»`,
+        
+        4: `¿Y si llevas años pagando los yogures… mientras alguien más se queda con la casa?\n\nAh, la madre. 😳\nSuena fuerte, pero existe una idea que se conoce como la teoría del yogurt vacío.\n\nChiqui, piensa en esto:\n\nEn una pareja, una persona puede terminar pagando lo que se consume:\ndespensa, comida, escuela, gastos del día a día…\n\nMientras la otra paga lo que permanece:\nla casa, inversiones, patrimonio.\n\nY mientras están juntos parece que todo está equilibrado.\n\nPero después de 10, 15 o 20 años…\n\nlos yogures se acabaron.\nEl patrimonio sigue ahí.\n\nY ojo, chiqui: no se trata de dejar de cuidar a tu familia.\n\nSe trata de que tú también tengas una estrategia para crear, proteger y multiplicar tu dinero.\n\nPorque una EMPODINERADA no solo genera dinero…\n\ntambién construye patrimonio.\n\n¿Tú estás comprando yogures o también estás construyendo futuro?\n\nSi esto te hizo sentido, envíame DM, yo soy Fernanda Rangel y puedo asesorarte sobre este tema.`,
+        
+        5: `Una mujer empoderada también puede ser una EMPODINERADA.\n“Mamá, ¿tú empoderas a mujeres?”\n\nEso me preguntó Sebastián el viernes pasado.\n\nY yo, sin pensarlo:\n“No, claro que no.”\n\nNunca me ha gustado mucho esa palabra.\n\nEntonces le pregunté:\n“¿Y para ti qué significa empoderar?”\n\nY me dijo:\n“Pues creerse mucho.”\n\nNo saben la risa que me dio. 😂\n\nPero buscamos qué significaba realmente y encontramos que una mujer empoderada es una mujer que conoce su valor, toma sus propias decisiones y trabaja por lo que quiere.\n\nY ahí Sebastián me dijo:\n“Sí, mamá. Entonces sí eres.”\n\nY me quedé pensando…\n\nPorque para mí, hoy, una mujer empoderada también puede ser una EMPODINERADA.\n\nUna mujer que no solo sabe lo que vale, sino que también aprende a crear, administrar y multiplicar su dinero.\n\nQue no piensa que el dinero es responsabilidad exclusiva del hombre.\n\nQue puede construir su propio patrimonio, tomar decisiones financieras y participar activamente en el futuro económico de su familia.\n\nNo porque no necesite a nadie.\nSino porque sabe que su libertad también se construye con dinero.\n\nY quizá eso es lo que quiero enseñarles a mis hijos y a muchas mujeres:\n\nque podemos ser independientes, crear dinero y disfrutar nuestra vida sin tener que encajar en el molde que nos enseñaron.\n\nPorque una EMPODINERADA no tiene que poder con todo.\n\nPero sí sabe que su dinero también está en sus manos. ¿Y tú idénticas con este concepto? ¡Házmelo saber en los comentarios!`,
+        
+        6: `[GUIÓN EN DESARROLLO POR FER RANGEL]\n\nTema: Caso PPR - Mi clienta de 32 años.\nPróximamente se integrará el guión final redactado por Fer.`,
+        
+        7: `Comprendió entonces que, si un cordero se come las flores, es para él como si de pronto todas las estrellas se apagasen. ¡Y eso no es importante!\n\nNo pudo decir nada más. Rompió bruscamente en sollozos. La noche había caído. Yo había dejado mis herramientas. ¡No me importaban nada mi martillo, mi perno, la sed y la muerte! En una estrella, en un planeta, el mío, la Tierra, ¡había un pequeñuelo a quien consolar!\n\n(Texto de referencia provisional).`,
+        
+        8: `Comprendió entonces que, si un cordero se come las flores, es para él como si de pronto todas las estrellas se apagasen. ¡Y eso no es importante!\n\nNo pudo decir nada más. Rompió bruscamente en sollozos. La noche había caído. Yo había dejado mis herramientas. ¡No me importaban nada mi martillo, mi perno, la sed y la muerte!\n\n(Texto de referencia provisional).`,
+        
+        9: `Comprendió entonces que, si un cordero se come las flores, es para él como si de pronto todas las estrellas se apagasen. ¡Y eso no es importante!\n\nNo pudo decir nada más. Rompió bruscamente en sollozos. La noche había caído. Yo había dejado mis herramientas.\n\n(Texto de referencia provisional).`,
+        
+        10: `Comprendió entonces que, si un cordero se come las flores, es para él como si de pronto todas las estrellas se apagasen. ¡Y eso no es importante!\n\nNo pudo decir nada más. Rompió bruscamente en sollozos. La noche había caído.\n\n(Texto de referencia provisional).`
+    };
+
+    function openScriptModal(pubId) {
+        const modal = document.getElementById('scriptModal');
+        const title = document.getElementById('modalTitle');
+        const body = document.getElementById('modalBody');
+
+        title.innerText = `Guión · Publicación ${pubId}`;
+        body.innerText = scriptsData[pubId] || 'Guión pendiente de cargar.';
+        modal.style.display = 'flex';
+    }
+
+    function closeScriptModal() {
+        document.getElementById('scriptModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('scriptModal');
+        if (event.target === modal) {
+            closeScriptModal();
+        }
+    };
+</script>
+
+</body>
+</html>
